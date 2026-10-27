@@ -161,8 +161,16 @@
   z-index: 1;
   width: 100%;
   max-width: 380px;
-  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 85%);
-  mask-image: linear-gradient(to bottom, black 40%, transparent 85%);
+}
+
+.hero-photo-fade::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 55%;
+  background: linear-gradient(to top, #0a0a0f 0%, #0a0a0f 20%, rgba(10,10,15,0.8) 60%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
 }
 
 @keyframes float-photo {
