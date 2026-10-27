@@ -117,12 +117,23 @@
 /* glowing background behind photo */
 .hero-photo-glow {
   position: absolute;
-  width: 340px; height: 340px;
+  width: 420px; height: 420px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(87,60,250,0.35) 0%, transparent 70%);
-  bottom: 0;
+  background: radial-gradient(circle, rgba(87,60,250,0.5) 0%, transparent 65%);
+  bottom: -60px;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* solid bottom cover to hide legs bleeding */
+.hero-photo-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg) 40%, transparent 100%);
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -151,10 +162,9 @@
   max-width: 380px;
   height: auto;
   object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0 0 50px rgba(87,60,250,0.5));
-  animation: float-photo 5s ease-in-out infinite;
   display: block;
+  filter: drop-shadow(0 0 60px rgba(87,60,250,0.6));
+  animation: float-photo 5s ease-in-out infinite;
 }
 
 .hero-photo-fade {
@@ -162,8 +172,6 @@
   z-index: 1;
   width: 100%;
   max-width: 380px;
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 92%);
-  mask-image: linear-gradient(to bottom, black 50%, transparent 92%);
 }
 
 @keyframes float-photo {
