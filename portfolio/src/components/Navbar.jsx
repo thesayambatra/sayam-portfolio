@@ -3,11 +3,11 @@ import './Navbar.css'
 
 const links = [
   { label: 'About',      href: 'about' },
+  { label: 'Impact',     href: 'impact' },
   { label: 'Experience', href: 'experience' },
-  { label: 'Skills',     href: 'skills' },
+  { label: 'Services',   href: 'services' },
   { label: 'Editing',    href: 'editing' },
   { label: 'Channels',   href: 'channels' },
-  { label: 'Certs',      href: 'certifications' },
   { label: 'Contact',    href: 'contact' },
 ]
 

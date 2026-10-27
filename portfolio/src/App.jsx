@@ -3,9 +3,12 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
 import About from './components/About'
+import Impact from './components/Impact'
 import Experience from './components/Experience'
+import Services from './components/Services'
 import Skills from './components/Skills'
 import Tools from './components/Tools'
+import Quote from './components/Quote'
 import EditingPortfolio from './components/EditingPortfolio'
 import Channels from './components/Channels'
 import Certifications from './components/Certifications'
@@ -22,9 +25,12 @@ export default function App() {
         <Hero />
         <Marquee />
         <About />
+        <Impact />
         <Experience />
+        <Services />
         <Skills />
         <Tools />
+        <Quote />
         <EditingPortfolio />
         <Channels />
         <Certifications />

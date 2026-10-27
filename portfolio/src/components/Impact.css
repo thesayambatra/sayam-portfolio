@@ -1,0 +1,75 @@
+.impact-sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: -28px;
+  margin-bottom: 48px;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.impact-card {
+  border-radius: 20px;
+  padding: 32px 24px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.impact-card:hover { transform: translateY(-3px); }
+
+.impact-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 20px 20px 0 0;
+}
+.impact-red::before    { background: var(--red); }
+.impact-purple::before { background: var(--primary); }
+.impact-green::before  { background: var(--green); }
+.impact-orange::before { background: var(--orange); }
+
+.impact-red:hover    { border-color: var(--red); }
+.impact-purple:hover { border-color: var(--primary); }
+.impact-green:hover  { border-color: var(--green); }
+.impact-orange:hover { border-color: var(--orange); }
+
+.impact-num {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.impact-num-red    { color: var(--red); }
+.impact-num-purple { color: var(--primary); }
+.impact-num-green  { color: var(--green); }
+.impact-num-orange { color: var(--orange); }
+
+.impact-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.impact-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .impact-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .impact-card { padding: 20px 16px; border-radius: 16px; }
+  .impact-num  { font-size: 2.2rem; }
+}
