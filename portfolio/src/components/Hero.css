@@ -154,6 +154,8 @@
   object-position: bottom;
   filter: drop-shadow(0 20px 60px rgba(87,60,250,0.4));
   animation: float-photo 5s ease-in-out infinite;
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
 @keyframes float-photo {
