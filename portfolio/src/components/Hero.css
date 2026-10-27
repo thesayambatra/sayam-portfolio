@@ -126,17 +126,6 @@
   pointer-events: none;
 }
 
-/* solid bottom cover to hide legs bleeding */
-.hero-photo-wrap::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 120px;
-  background: linear-gradient(to top, var(--bg) 40%, transparent 100%);
-  z-index: 2;
-  pointer-events: none;
-}
-
 /* decorative ring */
 .hero-photo-ring {
   position: absolute;
