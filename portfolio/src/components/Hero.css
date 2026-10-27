@@ -117,10 +117,10 @@
 /* glowing background behind photo */
 .hero-photo-glow {
   position: absolute;
-  width: 420px; height: 420px;
+  width: 500px; height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(87,60,250,0.5) 0%, transparent 65%);
-  bottom: -60px;
+  background: radial-gradient(circle, rgba(87,60,250,0.45) 0%, transparent 60%);
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
@@ -161,6 +161,8 @@
   z-index: 1;
   width: 100%;
   max-width: 380px;
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 85%);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 85%);
 }
 
 @keyframes float-photo {
