@@ -28,7 +28,7 @@ export default function Hero() {
             <div className="hero-stat-label">Channels Managed</div>
           </div>
           <div>
-            <div className="hero-stat-num stat-green">50M+</div>
+            <div className="hero-stat-num stat-green">40M+</div>
             <div className="hero-stat-label">Views in a Month</div>
           </div>
           <div>
