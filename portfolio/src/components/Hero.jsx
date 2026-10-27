@@ -50,7 +50,7 @@ export default function Hero() {
           <div className="hero-photo-ring" />
           <div className="hero-photo-fade">
             <img
-              src="/profile.png"
+              src="/profile-1.png"
               alt="Sayam Batra"
               className="hero-photo"
             />
