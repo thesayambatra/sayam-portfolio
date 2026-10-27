@@ -1,0 +1,74 @@
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+}
+
+.bento-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.bento-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+
+.bento-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* layout */
+.bento-bio   { grid-column: span 2; }
+.bento-edu   { grid-column: span 2; }
+.bento-langs { grid-column: span 1; }
+.bento-hobbies { grid-column: span 3; }
+.bento-stat  { grid-column: span 1; display: flex; flex-direction: column; justify-content: flex-end; }
+
+.bento-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+.bento-card p strong { color: var(--text); }
+
+/* edu */
+.edu-degree { font-size: 1.6rem; font-weight: 900; letter-spacing: -0.03em; }
+.edu-school { font-size: 1rem; font-weight: 700; color: var(--primary); margin-top: 4px; }
+.edu-loc    { font-size: 0.85rem; color: var(--muted); }
+.edu-years  { font-size: 0.8rem; color: var(--muted); margin-top: 12px; font-weight: 600; }
+
+/* languages */
+.lang-list  { display: flex; flex-direction: column; gap: 10px; }
+.lang-item  { font-size: 1rem; font-weight: 700; border-left: 3px solid var(--primary); padding-left: 10px; }
+
+/* hobbies */
+.tag-group  { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* stat cards */
+.bento-stat-red   { background: rgba(232,8,62,0.1);   border-color: rgba(232,8,62,0.3); }
+.bento-stat-green { background: rgba(2,134,74,0.1);   border-color: rgba(2,134,74,0.3); }
+
+.bento-big-num    { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1; }
+.bento-stat-red   .bento-big-num { color: var(--red); }
+.bento-stat-green .bento-big-num { color: var(--green); }
+.bento-stat-desc  { font-size: 0.82rem; color: var(--muted); margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .bento-bio, .bento-edu, .bento-hobbies { grid-column: span 2; }
+  .bento-stat { grid-column: span 1; }
+}
+
+@media (max-width: 560px) {
+  .bento { grid-template-columns: 1fr; }
+  .bento-bio, .bento-edu, .bento-hobbies, .bento-langs, .bento-stat { grid-column: span 1; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .bento-card { padding: 18px; border-radius: 16px; }
+  .edu-degree { font-size: 1.3rem; }
+  .bento-big-num { font-size: 2.2rem; }
+}

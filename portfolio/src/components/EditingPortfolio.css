@@ -1,0 +1,153 @@
+.ep-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.ep-subtitle {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+/* Tabs */
+.ep-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.ep-tab {
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background: var(--card);
+  color: var(--muted);
+  transition: all 0.2s;
+}
+
+.ep-tab:hover { color: var(--text); }
+
+/* active states per badge */
+.ep-tab-una.ep-tab-active    { background: rgba(232,8,62,0.15);   border-color: var(--red);    color: #ff6b8a; }
+.ep-tab-free.ep-tab-active   { background: rgba(251,141,26,0.15); border-color: var(--orange); color: var(--orange); }
+
+/* Portrait row (9:16) */
+.ep-portrait-row {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ep-portrait-row::-webkit-scrollbar { height: 4px; }
+.ep-portrait-row::-webkit-scrollbar-track { background: transparent; }
+.ep-portrait-row::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.ep-portrait-card {
+  flex: 0 0 185px;
+  scroll-snap-align: start;
+  display: block;
+  text-decoration: none;
+}
+
+.ep-portrait-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #111;
+}
+
+/* Landscape grid (16:9) */
+.ep-landscape-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.ep-landscape-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ep-landscape-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+
+.ep-landscape-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  background: #111;
+}
+
+/* Shared */
+.ep-portrait-thumb img,
+.ep-landscape-thumb img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.ep-portrait-card:hover img,
+.ep-landscape-card:hover img { transform: scale(1.04); }
+
+.ep-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: rgba(0,0,0,0.1);
+}
+
+.ep-portrait-card:hover .ep-overlay,
+.ep-landscape-card:hover .ep-overlay { opacity: 1; }
+
+.ep-landscape-info { padding: 14px 16px; }
+
+.ep-card-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 8px 2px 0;
+  text-align: center;
+}
+.ep-landscape-info .ep-card-title { text-align: left; padding: 0 0 4px; }
+
+.ep-card-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+.ep-group-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+@media (max-width: 640px) {
+  .ep-header { flex-direction: column; align-items: flex-start; }
+  .ep-header .btn-secondary { width: 100%; text-align: center; }
+  .ep-portrait-card { flex: 0 0 150px; }
+  .ep-landscape-grid { grid-template-columns: 1fr; }
+  .ep-tab { padding: 7px 14px; font-size: 0.8rem; }
+}

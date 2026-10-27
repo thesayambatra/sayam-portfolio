@@ -1,0 +1,144 @@
+.mep-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.mep-subtitle {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.mep-group-label {
+  margin-bottom: 16px;
+}
+
+.mep-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+.mep-badge-red {
+  background: rgba(232,8,62,0.15);
+  color: #ff6b8a;
+  border: 1px solid rgba(232,8,62,0.35);
+}
+
+.mep-badge-purple {
+  background: rgba(87,60,250,0.15);
+  color: #a89fff;
+  border: 1px solid rgba(87,60,250,0.35);
+}
+
+/* Short form — horizontal scroll, 9:16 */
+.mep-short-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mep-short-row::-webkit-scrollbar { height: 4px; }
+.mep-short-row::-webkit-scrollbar-track { background: var(--bg2); border-radius: 2px; }
+.mep-short-row::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.mep-short-card {
+  flex: 0 0 190px;
+  scroll-snap-align: start;
+  display: block;
+  text-decoration: none;
+}
+
+.mep-short-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 177.78%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #000;
+}
+
+/* Long form — 16:9 grid */
+.mep-long-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.mep-long-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.mep-long-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+
+.mep-long-thumb {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  background: #000;
+}
+
+/* shared thumb styles */
+.mep-short-thumb img,
+.mep-long-thumb img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mep-short-card:hover img,
+.mep-long-card:hover img { transform: scale(1.04); }
+
+.mep-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: rgba(0,0,0,0.15);
+}
+
+.mep-short-card:hover .mep-play-overlay,
+.mep-long-card:hover .mep-play-overlay { opacity: 1; }
+
+.mep-long-info { padding: 14px 16px; }
+
+.mep-card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  padding: 10px 4px 0;
+  text-align: center;
+}
+
+.mep-long-info .mep-card-title {
+  text-align: left;
+  padding: 0 0 4px;
+}
+
+.mep-card-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
