@@ -48,11 +48,13 @@ export default function Hero() {
         <div className="hero-photo-wrap">
           <div className="hero-photo-glow" />
           <div className="hero-photo-ring" />
-          <img
-            src="/profile.png"
-            alt="Sayam Batra"
-            className="hero-photo"
-          />
+          <div className="hero-photo-fade">
+            <img
+              src="/profile.png"
+              alt="Sayam Batra"
+              className="hero-photo"
+            />
+          </div>
           <div className="hero-photo-chips">
             <div className="hero-chip">🎬 Adobe Premiere Pro</div>
             <div className="hero-chip">📊 YouTube Analytics</div>

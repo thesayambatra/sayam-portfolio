@@ -152,10 +152,18 @@
   height: auto;
   object-fit: contain;
   object-position: bottom;
-  filter: drop-shadow(0 20px 60px rgba(87,60,250,0.4));
+  filter: drop-shadow(0 0 50px rgba(87,60,250,0.5));
   animation: float-photo 5s ease-in-out infinite;
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  display: block;
+}
+
+.hero-photo-fade {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 380px;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 92%);
 }
 
 @keyframes float-photo {
