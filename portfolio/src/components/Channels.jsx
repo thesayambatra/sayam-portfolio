@@ -94,22 +94,43 @@ const instaPages = [
 ]
 
 function ChannelCard({ channel, platform }) {
-  const avatarUrl = platform === 'instagram'
-    ? `https://unavatar.io/instagram/${channel.handle}`
-    : `https://unavatar.io/youtube/${channel.handle}`
+  const avatarUrl = platform === 'youtube'
+    ? `https://unavatar.io/youtube/${channel.handle}`
+    : null
 
   const linkLabel = platform === 'instagram'
     ? `instagram.com/${channel.handle}`
     : `youtube.com/@${channel.handle}`
 
+  const initials = channel.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+
+  const instaColors = ['#833ab4', '#fd1d1d', '#fcb045', '#e1306c', '#405de6']
+  const colorIndex = channel.handle.charCodeAt(0) % instaColors.length
+
   return (
     <a href={channel.url} target="_blank" rel="noreferrer" className="channel-card">
-      <img
-        src={avatarUrl}
-        alt={channel.name}
-        className="channel-avatar"
-        onError={(e) => { e.target.style.background = '#2d2d45'; e.target.src = '' }}
-      />
+      {platform === 'youtube' ? (
+        <img
+          src={avatarUrl}
+          alt={channel.name}
+          className="channel-avatar"
+          onError={(e) => {
+            e.target.style.display = 'none'
+            e.target.nextSibling.style.display = 'flex'
+          }}
+        />
+      ) : null}
+      <div
+        className="channel-avatar channel-avatar-fallback"
+        style={{
+          background: platform === 'instagram'
+            ? `linear-gradient(135deg, ${instaColors[colorIndex]}, #fcb045)`
+            : 'var(--card2)',
+          display: platform === 'instagram' ? 'flex' : 'none',
+        }}
+      >
+        {initials}
+      </div>
       <div className="channel-info">
         <div className="channel-name-row">
           <span className="channel-name">{channel.name}</span>
