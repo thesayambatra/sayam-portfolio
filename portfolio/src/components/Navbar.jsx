@@ -8,7 +8,6 @@ const links = [
   { label: 'Services',   href: 'services' },
   { label: 'Editing',    href: 'editing' },
   { label: 'Channels',   href: 'channels' },
-  { label: 'Contact',    href: 'contact' },
 ]
 
 export default function Navbar() {
@@ -25,6 +24,9 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        <div className="nav-cta-wrap">
+          <a href="#contact" className="nav-cta nav-links a">Let's Work</a>
+        </div>
         <button className="nav-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           <span /><span /><span />
         </button>
