@@ -240,3 +240,23 @@
   .hero-photo-ring { width: 200px; height: 200px; }
   .hero-photo-bg   { width: 200px; height: 200px; }
 }
+
+.btn-resume {
+  background: transparent;
+  color: #a89fff;
+  padding: 13px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(87,60,250,0.4);
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.btn-resume:hover {
+  border-color: var(--primary-light);
+  background: rgba(87,60,250,0.1);
+  transform: translateY(-2px);
+  color: #fff;
+}

@@ -76,3 +76,24 @@
   }
   .nav-links.open { display: flex; }
 }
+
+.nav-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-resume {
+  color: #a89fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(87,60,250,0.35);
+  transition: border-color 0.2s, background 0.2s;
+}
+.nav-resume:hover {
+  border-color: var(--primary-light);
+  background: rgba(87,60,250,0.1);
+  color: #fff;
+}

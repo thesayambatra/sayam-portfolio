@@ -50,6 +50,14 @@ export default function Hero() {
           <div className="hero-actions">
             <a href="#contact" className="btn-primary">Let's Work Together</a>
             <a href="#editing" className="btn-secondary">↓ See My Work</a>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1gIQGyCp6sKGjEpqe2Lj_Oyiyac1gRxTW"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-resume"
+            >
+              ↓ Resume
+            </a>
           </div>
         </div>
 

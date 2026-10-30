@@ -25,7 +25,13 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="nav-cta-wrap">
-          <a href="#contact" className="nav-cta nav-links a">Let's Work</a>
+          <a
+            href="https://drive.google.com/uc?export=download&id=1gIQGyCp6sKGjEpqe2Lj_Oyiyac1gRxTW"
+            target="_blank"
+            rel="noreferrer"
+            className="nav-resume"
+          >↓ Resume</a>
+          <a href="#contact" className="nav-cta">Let's Work</a>
         </div>
         <button className="nav-toggle" onClick={() => setOpen(!open)} aria-label="Toggle menu">
           <span /><span /><span />
