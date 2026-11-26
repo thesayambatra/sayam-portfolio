@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/defence/:path*",
-      "destination": "https://defenceprep.vercel.app/defence/:path*"
+      "destination": "https://sayam-portfolio-z5qq.vercel.app/defence/:path*"
     }
   ]
 }
