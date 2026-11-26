@@ -16,6 +16,7 @@ import Analytics from "@/views/Analytics";
 import Admin from "@/views/Admin";
 import Profile from "@/views/Profile";
 import Login from "@/views/Login";
+import Games from "@/views/Games";
 
 export default function Home() {
   const { darkMode } = useProgress();
@@ -53,6 +54,7 @@ export default function Home() {
       case "analytics":      return <Analytics />;
       case "admin":          return <Admin />;
       case "profile":        return <Profile />;
+      case "games":          return <Games />;
       default:               return <Dashboard onNavigate={setActive} />;
     }
   };

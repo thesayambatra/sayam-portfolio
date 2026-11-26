@@ -3,7 +3,7 @@ import {
   LayoutDashboard, BookOpen, Map, Calendar, ClipboardList,
   FileText, Newspaper, BarChart2, Shield,
   Settings, ChevronLeft, ChevronRight, FlaskConical,
-  Brain, Award, Moon, Sun, X, User,
+  Brain, Award, Moon, Sun, X, User, Gamepad2,
 } from "lucide-react";
 import { useProgress } from "@/lib/store/progressStore";
 
@@ -17,6 +17,7 @@ export const NAV_ITEMS = [
   { id: "resources",      label: "Resources",        icon: FlaskConical,    group: "Learn" },
   { id: "currentaffairs", label: "Current Affairs",  icon: Newspaper,       group: "Learn" },
   { id: "ssb",            label: "SSB / AFSB Prep",  icon: Brain,           group: "Interview" },
+  { id: "games",          label: "Mind Games",       icon: Gamepad2,        group: "Learn" },
   { id: "analytics",      label: "Analytics",        icon: BarChart2,       group: "Progress" },
   { id: "admin",          label: "Admin Panel",      icon: Award,           group: "Admin" },
 ];
