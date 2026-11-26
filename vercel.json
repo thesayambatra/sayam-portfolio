@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "portfolio/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "Defence/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/defence(.*)",
+      "dest": "Defence$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "portfolio/$1"
+    }
+  ]
+}

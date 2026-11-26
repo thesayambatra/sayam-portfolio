@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0b1728;
+  --surface: #12233a;
+  --surface2: #1a3355;
+  --gold: #d18f17;
+  --gold-light: #e3a92e;
+  --olive: #6b8a4b;
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.07);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+@layer components {
+  .card {
+    @apply bg-navy-800 border border-white/5 rounded-xl p-5;
+  }
+  .card-glass {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5;
+  }
+  .btn-gold {
+    @apply bg-gold-500 hover:bg-gold-400 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 text-sm;
+  }
+  .btn-outline {
+    @apply border border-white/20 hover:border-gold-400 hover:text-gold-400 text-white/70 font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm;
+  }
+  .btn-ghost {
+    @apply hover:bg-white/10 text-white/70 hover:text-white font-medium px-3 py-2 rounded-lg transition-all duration-200 text-sm;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all duration-200 text-sm font-medium;
+  }
+  .nav-item-active {
+    @apply bg-gold-500/20 text-gold-400 border-l-2 border-gold-400;
+  }
+  .nav-item-inactive {
+    @apply text-white/60 hover:bg-white/5 hover:text-white;
+  }
+  .badge {
+    @apply text-xs font-semibold px-2 py-0.5 rounded-full;
+  }
+  .badge-gold {
+    @apply bg-gold-500/20 text-gold-400;
+  }
+  .badge-green {
+    @apply bg-green-500/20 text-green-400;
+  }
+  .badge-blue {
+    @apply bg-blue-500/20 text-blue-400;
+  }
+  .badge-red {
+    @apply bg-red-500/20 text-red-400;
+  }
+  .input-field {
+    @apply bg-navy-900 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors;
+  }
+  .progress-ring-container {
+    @apply relative inline-flex items-center justify-center;
+  }
+  .section-header {
+    @apply text-xl font-bold text-white mb-1;
+  }
+  .section-subheader {
+    @apply text-sm text-white/50 mb-6;
+  }
+}
+
+/* Animations */
+.animate-fade-in { animation: fadeIn 0.4s ease-out; }
+.animate-slide-up { animation: slideUp 0.35s ease-out; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Timer ring */
+.timer-circle { transform: rotate(-90deg); }
+
+/* Difficulty badges */
+.diff-easy { @apply bg-green-500/15 text-green-400 text-xs px-2 py-0.5 rounded-full font-medium; }
+.diff-medium { @apply bg-yellow-500/15 text-yellow-400 text-xs px-2 py-0.5 rounded-full font-medium; }
+.diff-hard { @apply bg-red-500/15 text-red-400 text-xs px-2 py-0.5 rounded-full font-medium; }
