@@ -6,44 +6,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Portfolio primary palette
+        primary: {
+          DEFAULT: "#573CFA",
+          light:   "#7c63fb",
+        },
+        // Neutrals matching portfolio bg/card/border
         navy: {
-          50: "#f0f4f8",
-          100: "#d9e2ec",
-          200: "#b3c4d9",
-          300: "#829dbb",
-          400: "#55789b",
-          500: "#345a80",
-          600: "#244666",
-          700: "#1a3355",
-          800: "#12233a",
-          900: "#0b1728",
-          950: "#060e1c",
+          50:  "#f0f0ff",
+          100: "#e0e0ff",
+          200: "#c4c0f9",
+          300: "#a89fff",
+          400: "#8b82b0",
+          500: "#6b6490",
+          600: "#2a2550",
+          700: "#1e1a36",
+          800: "#16132a",
+          900: "#110f20",
+          950: "#0d0b1a",
+        },
+        // Accent colours from portfolio
+        gold: {
+          DEFAULT: "#FB8D1A",
+          400: "#FB8D1A",
+          500: "#e07b0f",
         },
         olive: {
-          50: "#f6f7f0",
-          100: "#e6e9dd",
-          200: "#ccd3b8",
-          300: "#aaba8d",
-          400: "#86a066",
-          500: "#6b8a4b",
-          600: "#52703a",
-          700: "#3f5830",
-          800: "#314527",
-          900: "#293a22",
-          950: "#141d10",
-        },
-        gold: {
-          50: "#fdf9ec",
-          100: "#f9eec8",
-          200: "#f2da8f",
-          300: "#eac055",
-          400: "#e3a92e",
-          500: "#d18f17",
-          600: "#b56e12",
-          700: "#8f5113",
-          800: "#764217",
-          900: "#643a18",
-          950: "#3a1f0b",
+          DEFAULT: "#02864A",
+          500: "#02864A",
         },
       },
       fontFamily: {
@@ -51,11 +41,11 @@ const config: Config = {
         display: ["Georgia", "serif"],
       },
       animation: {
-        "fade-in": "fadeIn 0.4s ease-out",
+        "fade-in":  "fadeIn 0.4s ease-out",
         "slide-up": "slideUp 0.4s ease-out",
       },
       keyframes: {
-        fadeIn: { from: { opacity: "0" }, to: { opacity: "1" } },
+        fadeIn:  { from: { opacity: "0" },                              to: { opacity: "1" } },
         slideUp: { from: { opacity: "0", transform: "translateY(12px)" }, to: { opacity: "1", transform: "translateY(0)" } },
       },
     },

@@ -55,25 +55,24 @@ export default function Sidebar({ active, onNavigate, collapsed, onCollapse, mob
 
       <aside
         className={`
-          flex flex-col bg-navy-900 border-r border-white/5 h-screen
+          flex flex-col h-screen
           transition-all duration-300 flex-shrink-0
-          /* Desktop: inline, collapsible */
           md:sticky md:top-0 md:translate-x-0
           ${collapsed ? "md:w-16" : "md:w-64"}
-          /* Mobile: fixed drawer, slides in from left */
           fixed top-0 left-0 z-50 w-72
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"}
           md:relative md:flex
         `}
+        style={{ background: "var(--bg2)", borderRight: "1px solid var(--border)" }}
       >
         {/* Logo */}
-        <div className={`flex items-center gap-3 p-4 border-b border-white/5 ${collapsed ? "md:justify-center" : ""}`}>
-          <div className="w-9 h-9 rounded-lg bg-gold-500 flex items-center justify-center flex-shrink-0">
+        <div className={`flex items-center gap-3 p-4 ${collapsed ? "md:justify-center" : ""}`} style={{ borderBottom: "1px solid var(--border)" }}>
+          <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "var(--primary)" }}>
             <Shield size={18} className="text-white" />
           </div>
           <div className={`${collapsed ? "md:hidden" : ""}`}>
             <div className="text-sm font-bold text-white leading-tight">DEFENCEPREP</div>
-            <div className="text-[10px] text-gold-400 uppercase tracking-widest">Armed Forces Prep</div>
+            <div className="text-[10px] uppercase tracking-widest" style={{ color: "var(--primary-light)" }}>Armed Forces Prep</div>
           </div>
           {/* Mobile close button */}
           <button
@@ -121,9 +120,9 @@ export default function Sidebar({ active, onNavigate, collapsed, onCollapse, mob
         </nav>
 
         {/* Bottom */}
-        <div className="border-t border-white/5 p-3 space-y-2">
-          <div className={`flex items-center gap-3 px-2 py-2 rounded-lg bg-gold-500/10 ${collapsed ? "md:hidden" : ""}`}>
-            <div className="w-8 h-8 rounded-full bg-gold-500 flex items-center justify-center text-xs font-bold text-white flex-shrink-0">
+        <div className="p-3 space-y-2" style={{ borderTop: "1px solid var(--border)" }}>
+          <div className={`flex items-center gap-3 px-2 py-2 rounded-lg ${collapsed ? "md:hidden" : ""}`} style={{ background: "rgba(87,60,250,0.12)" }}>
+            <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0" style={{ background: "var(--primary)" }}>
               {name.charAt(0).toUpperCase()}
             </div>
             <div className="min-w-0">

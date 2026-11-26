@@ -5,15 +5,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg: #0b1728;
-  --surface: #12233a;
-  --surface2: #1a3355;
-  --gold: #d18f17;
-  --gold-light: #e3a92e;
-  --olive: #6b8a4b;
-  --text: #e2e8f0;
-  --text-muted: #94a3b8;
-  --border: rgba(255, 255, 255, 0.07);
+  --bg:      #0d0b1a;
+  --bg2:     #110f20;
+  --card:    #16132a;
+  --card2:   #1e1a36;
+  --primary: #573CFA;
+  --primary-light: #7c63fb;
+  --red:     #E8083E;
+  --green:   #02864A;
+  --orange:  #FB8D1A;
+  --text:    #ffffff;
+  --muted:   #8b82b0;
+  --border:  #2a2550;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,60 +30,96 @@ html, body {
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
 @layer components {
   .card {
-    @apply bg-navy-800 border border-white/5 rounded-xl p-5;
+    @apply rounded-xl p-5;
+    background: var(--card);
+    border: 1px solid var(--border);
   }
   .card-glass {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5;
+    @apply backdrop-blur-sm rounded-xl p-5;
+    background: rgba(22, 19, 42, 0.6);
+    border: 1px solid var(--border);
   }
   .btn-gold {
-    @apply bg-gold-500 hover:bg-gold-400 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-200 text-sm;
+    @apply font-semibold px-4 py-2 rounded-lg transition-all duration-200 text-sm text-white;
+    background: var(--primary);
+  }
+  .btn-gold:hover {
+    background: var(--primary-light);
   }
   .btn-outline {
-    @apply border border-white/20 hover:border-gold-400 hover:text-gold-400 text-white/70 font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm;
+    @apply font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .btn-outline:hover {
+    border-color: var(--primary-light);
+    color: var(--text);
   }
   .btn-ghost {
-    @apply hover:bg-white/10 text-white/70 hover:text-white font-medium px-3 py-2 rounded-lg transition-all duration-200 text-sm;
+    @apply font-medium px-3 py-2 rounded-lg transition-all duration-200 text-sm;
+    color: var(--muted);
+  }
+  .btn-ghost:hover {
+    background: rgba(87, 60, 250, 0.1);
+    color: var(--text);
   }
   .nav-item {
     @apply flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all duration-200 text-sm font-medium;
   }
   .nav-item-active {
-    @apply bg-gold-500/20 text-gold-400 border-l-2 border-gold-400;
+    background: rgba(87, 60, 250, 0.15);
+    color: var(--primary-light);
+    border-left: 2px solid var(--primary);
   }
   .nav-item-inactive {
-    @apply text-white/60 hover:bg-white/5 hover:text-white;
+    color: var(--muted);
+  }
+  .nav-item-inactive:hover {
+    background: rgba(87, 60, 250, 0.08);
+    color: var(--text);
   }
   .badge {
     @apply text-xs font-semibold px-2 py-0.5 rounded-full;
   }
   .badge-gold {
-    @apply bg-gold-500/20 text-gold-400;
+    background: rgba(251, 141, 26, 0.15);
+    color: var(--orange);
   }
   .badge-green {
-    @apply bg-green-500/20 text-green-400;
+    background: rgba(2, 134, 74, 0.15);
+    color: #22c55e;
   }
   .badge-blue {
-    @apply bg-blue-500/20 text-blue-400;
+    background: rgba(87, 60, 250, 0.15);
+    color: var(--primary-light);
   }
   .badge-red {
-    @apply bg-red-500/20 text-red-400;
+    background: rgba(232, 8, 62, 0.15);
+    color: var(--red);
   }
   .input-field {
-    @apply bg-navy-900 border border-white/10 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-gold-500 transition-colors;
+    @apply rounded-lg px-3 py-2 text-sm text-white focus:outline-none transition-colors;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+  }
+  .input-field:focus {
+    border-color: var(--primary);
   }
   .progress-ring-container {
     @apply relative inline-flex items-center justify-center;
   }
   .section-header {
-    @apply text-xl font-bold text-white mb-1;
+    @apply text-xl font-bold mb-1;
+    color: var(--text);
   }
   .section-subheader {
-    @apply text-sm text-white/50 mb-6;
+    @apply text-sm mb-6;
+    color: var(--muted);
   }
 }
 
@@ -95,6 +134,6 @@ html, body {
 .timer-circle { transform: rotate(-90deg); }
 
 /* Difficulty badges */
-.diff-easy { @apply bg-green-500/15 text-green-400 text-xs px-2 py-0.5 rounded-full font-medium; }
-.diff-medium { @apply bg-yellow-500/15 text-yellow-400 text-xs px-2 py-0.5 rounded-full font-medium; }
-.diff-hard { @apply bg-red-500/15 text-red-400 text-xs px-2 py-0.5 rounded-full font-medium; }
+.diff-easy   { background: rgba(2, 134, 74, 0.15);   color: #22c55e;         font-size: 0.75rem; padding: 2px 8px; border-radius: 9999px; font-weight: 500; }
+.diff-medium { background: rgba(251, 141, 26, 0.15);  color: var(--orange);   font-size: 0.75rem; padding: 2px 8px; border-radius: 9999px; font-weight: 500; }
+.diff-hard   { background: rgba(232, 8, 62, 0.15);    color: var(--red);      font-size: 0.75rem; padding: 2px 8px; border-radius: 9999px; font-weight: 500; }

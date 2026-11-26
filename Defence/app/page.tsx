@@ -32,13 +32,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark");
-      document.body.style.background = "#0b1728";
-    } else {
-      document.body.classList.remove("dark");
-      document.body.style.background = "#f0f4f8";
-    }
+    document.body.style.background = "var(--bg)";
   }, [darkMode]);
 
   // Collapse sidebar on desktop resize
@@ -78,7 +72,7 @@ export default function Home() {
   const currentNavItem = NAV_ITEMS.find((n) => n.id === active);
 
   return (
-    <div className={`flex min-h-screen ${darkMode ? "bg-navy-950" : "bg-gray-100"}`}>
+    <div className="flex min-h-screen" style={{ background: "var(--bg)" }}>
       {/* Sidebar — hidden on mobile (drawer), visible on md+ */}
       <div className="hidden md:flex">
         <Sidebar
@@ -105,9 +99,7 @@ export default function Home() {
 
       <main className="flex-1 overflow-x-hidden min-w-0">
         {/* Top bar */}
-        <header className={`sticky top-0 z-30 ${darkMode ? "bg-navy-950/80" : "bg-gray-100/80"} backdrop-blur-md border-b ${
-          darkMode ? "border-white/5" : "border-gray-200"
-        } px-4 md:px-6 py-3 flex items-center gap-3`}>
+        <header className="sticky top-0 z-30 backdrop-blur-md px-4 md:px-6 py-3 flex items-center gap-3" style={{ background: "rgba(13,11,26,0.85)", borderBottom: "1px solid var(--border)" }}>
           {/* Hamburger — mobile only */}
           <button
             onClick={() => setMobileOpen(true)}
@@ -121,7 +113,7 @@ export default function Home() {
           <div className="text-white/20 hidden sm:block">/</div>
           <div className="text-sm font-semibold text-white truncate">{currentNavItem?.label ?? "Dashboard"}</div>
           <div className="flex-1" />
-          <div className="hidden md:flex items-center gap-2 text-xs text-white/50 bg-white/5 border border-white/5 rounded-lg px-3 py-1.5">
+          <div className="hidden md:flex items-center gap-2 text-xs rounded-lg px-3 py-1.5" style={{ color: "var(--muted)", background: "rgba(87,60,250,0.08)", border: "1px solid var(--border)" }}>
             <Search size={12} className="text-gold-400" />
             Search syllabus, tests, GK...
           </div>
