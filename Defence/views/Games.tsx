@@ -55,7 +55,7 @@ const SCRAMBLE_WORDS = [
   { word: "LOGISTICS", hint: "Planning and managing military supplies" },
 ];
 
-function scramble(word: string) {
+function scramble(word: string): string {
   const a = word.split("");
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
