@@ -163,10 +163,10 @@ export default function Analytics() {
               <thead>
                 <tr className="text-xs text-white/40 border-b border-white/5">
                   <th className="text-left pb-2 font-medium">Test</th>
-                  <th className="text-center pb-2 font-medium">Date</th>
-                  <th className="text-center pb-2 font-medium">Score</th>
+                  <th className="text-center pb-2 font-medium hidden sm:table-cell">Date</th>
+                  <th className="text-center pb-2 font-medium hidden sm:table-cell">Score</th>
                   <th className="text-center pb-2 font-medium">%</th>
-                  <th className="text-center pb-2 font-medium">Time</th>
+                  <th className="text-center pb-2 font-medium hidden md:table-cell">Time</th>
                   <th className="text-center pb-2 font-medium">Status</th>
                 </tr>
               </thead>
@@ -176,13 +176,13 @@ export default function Analytics() {
                   const sc = pct(t.score, t.total);
                   return (
                     <tr key={i} className="hover:bg-white/2">
-                      <td className="py-2.5 text-white/80">{mt?.title ?? t.testId}</td>
-                      <td className="py-2.5 text-center text-white/50">{t.date}</td>
-                      <td className="py-2.5 text-center text-white">{t.score}/{t.total}</td>
+                      <td className="py-2.5 text-white/80 max-w-[120px] truncate">{mt?.title ?? t.testId}</td>
+                      <td className="py-2.5 text-center text-white/50 hidden sm:table-cell">{t.date}</td>
+                      <td className="py-2.5 text-center text-white hidden sm:table-cell">{t.score}/{t.total}</td>
                       <td className="py-2.5 text-center">
                         <span className={sc >= 70 ? "text-green-400" : sc >= 50 ? "text-yellow-400" : "text-red-400"}>{sc}%</span>
                       </td>
-                      <td className="py-2.5 text-center text-white/50">{Math.floor(t.timeTaken / 60)}m {t.timeTaken % 60}s</td>
+                      <td className="py-2.5 text-center text-white/50 hidden md:table-cell">{Math.floor(t.timeTaken / 60)}m {t.timeTaken % 60}s</td>
                       <td className="py-2.5 text-center">
                         <span className={`badge ${sc >= 70 ? "badge-green" : sc >= 50 ? "badge-gold" : "badge-red"}`}>{sc >= 70 ? "Pass" : sc >= 50 ? "Average" : "Fail"}</span>
                       </td>

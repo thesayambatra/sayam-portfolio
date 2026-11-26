@@ -48,7 +48,7 @@ export default function Syllabus() {
       />
 
       {/* Tabs */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {(["CDS", "AFCAT", "OTA"] as const).map((t) => (
           <button
             key={t}

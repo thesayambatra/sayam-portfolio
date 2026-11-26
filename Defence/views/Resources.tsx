@@ -50,7 +50,7 @@ export default function Resources() {
       <SectionHeading title="Learning Resources" sub="Study materials, formula sheets, vocabulary and notes." />
 
       {/* Tabs */}
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {[
           { id: "materials", label: "Study Materials" },
           { id: "vocab", label: "Vocabulary Builder" },

@@ -169,11 +169,11 @@ export default function Admin() {
               <thead>
                 <tr className="text-xs text-white/40 border-b border-white/5">
                   <th className="text-left pb-2 font-medium">Name</th>
-                  <th className="text-left pb-2 font-medium">Email</th>
+                  <th className="text-left pb-2 font-medium hidden md:table-cell">Email</th>
                   <th className="text-center pb-2 font-medium">Exam</th>
-                  <th className="text-center pb-2 font-medium">Tests</th>
+                  <th className="text-center pb-2 font-medium hidden sm:table-cell">Tests</th>
                   <th className="text-center pb-2 font-medium">Avg Score</th>
-                  <th className="text-center pb-2 font-medium">Joined</th>
+                  <th className="text-center pb-2 font-medium hidden md:table-cell">Joined</th>
                   <th className="text-center pb-2 font-medium">Actions</th>
                 </tr>
               </thead>
@@ -181,13 +181,13 @@ export default function Admin() {
                 {demoUsers.map((u) => (
                   <tr key={u.id} className="hover:bg-white/2">
                     <td className="py-2.5 text-white/80 font-medium">{u.name}</td>
-                    <td className="py-2.5 text-white/50">{u.email}</td>
+                    <td className="py-2.5 text-white/50 hidden md:table-cell">{u.email}</td>
                     <td className="py-2.5 text-center"><span className={`badge text-[10px] ${u.exam === "CDS" ? "badge-blue" : u.exam === "AFCAT" ? "badge-gold" : "badge-green"}`}>{u.exam}</span></td>
-                    <td className="py-2.5 text-center text-white/60">{u.tests}</td>
+                    <td className="py-2.5 text-center text-white/60 hidden sm:table-cell">{u.tests}</td>
                     <td className="py-2.5 text-center">
                       <span className={u.score >= 70 ? "text-green-400" : u.score >= 50 ? "text-yellow-400" : "text-red-400"}>{u.score}%</span>
                     </td>
-                    <td className="py-2.5 text-center text-white/50 text-xs">{u.joined}</td>
+                    <td className="py-2.5 text-center text-white/50 text-xs hidden md:table-cell">{u.joined}</td>
                     <td className="py-2.5 text-center">
                       <div className="flex justify-center gap-2">
                         <button className="text-white/30 hover:text-blue-400 transition-colors"><Edit size={14} /></button>
